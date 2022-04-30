@@ -21,8 +21,7 @@ function ModalEdit(t) {
     </div>
   </div>
 </div>
-    </div>,
-    document.getElementById('modal')
+    </div>
   );
 }
 

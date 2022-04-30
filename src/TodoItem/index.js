@@ -1,15 +1,7 @@
 import React from "react";
-import { ModalEdit } from "../Modal/ModalEdit.jsx";
 import "./TodoItem.css";
 
 function TodoItem(props) {
-  const edit = (item) => {
-    console.log(item);
-    return(
-      <ModalEdit datos={item}/>
-    )
-  };
-
   return (
     <div className="TodoItem">
       <input
@@ -24,7 +16,7 @@ function TodoItem(props) {
         className="btn btn-warning mx-auto"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
-        onClick={() => edit(props)}
+        onClick={props.onEdit}
       >
         Edit
       </button>

@@ -50,26 +50,35 @@ function TodoProvider(props) {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
-  
+
+  const editTodo = (text) => {
+    const todoIndex = todos.find((todo) => todo.text === text);
+    console.log(todoIndex)
+  };
+
   return (
-    <TodoContext.Provider
-      value={{
-        loading,
-        error,
-        totalTodos,
-        completedTodos,
-        searchValue,
-        setSearchValue,
-        searchedTodos,
-        addTodo,
-        completeTodo,
-        deleteTodo,
-        openModal,
-        setOpenModal,
-      }}
-    >
-      {props.children}
-    </TodoContext.Provider>
+ 
+      <TodoContext.Provider
+        value={{
+          loading,
+          error,
+          totalTodos,
+          completedTodos,
+          searchValue,
+          setSearchValue,
+          searchedTodos,
+          addTodo,
+          completeTodo,
+          deleteTodo,
+          editTodo,
+          openModal,
+          setOpenModal,
+        }}
+      >
+        {props.children}
+      </TodoContext.Provider>
+  
+ 
   );
 }
 
