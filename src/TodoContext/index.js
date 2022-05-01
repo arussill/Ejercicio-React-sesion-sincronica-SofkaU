@@ -45,40 +45,40 @@ function TodoProvider(props) {
   };
 
   const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex((todo) => todo.text === text);
-    const newTodos = [...todos];
-    newTodos.splice(todoIndex, 1);
-    saveTodos(newTodos);
+    const confirmar = window.confirm("¿Seguro que desea eliminar?");
+    if (confirmar) {
+      const todoIndex = todos.findIndex((todo) => todo.text === text);
+      const newTodos = [...todos];
+      newTodos.splice(todoIndex, 1);
+      saveTodos(newTodos);
+    }
   };
 
   const editTodo = (text) => {
-    const todoIndex = todos.find((todo) => todo.text === text);
-    console.log(todoIndex)
+    const todoIndex = todos.find((todo) => todo.text === text);    
+    console.log(todoIndex);
   };
 
   return (
- 
-      <TodoContext.Provider
-        value={{
-          loading,
-          error,
-          totalTodos,
-          completedTodos,
-          searchValue,
-          setSearchValue,
-          searchedTodos,
-          addTodo,
-          completeTodo,
-          deleteTodo,
-          editTodo,
-          openModal,
-          setOpenModal,
-        }}
-      >
-        {props.children}
-      </TodoContext.Provider>
-  
- 
+    <TodoContext.Provider
+      value={{
+        loading,
+        error,
+        totalTodos,
+        completedTodos,
+        searchValue,
+        setSearchValue,
+        searchedTodos,
+        addTodo,
+        completeTodo,
+        deleteTodo,
+        editTodo,
+        openModal,
+        setOpenModal,
+      }}
+    >
+      {props.children}
+    </TodoContext.Provider>
   );
 }
 

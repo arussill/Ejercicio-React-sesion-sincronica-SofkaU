@@ -14,8 +14,6 @@ function TodoItem(props) {
       </p>
       <button
         className="btn btn-warning mx-auto"
-        data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
         onClick={props.onEdit}
       >
         Edit
