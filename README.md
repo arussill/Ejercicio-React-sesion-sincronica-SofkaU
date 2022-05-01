@@ -72,7 +72,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-Cambios
+#Cambios
+
 -REFACTOR - checkList en TodoItem
 
 ![PrimeraMejora](https://user-images.githubusercontent.com/71297040/166127088-726cbf4c-fdc8-42d9-ad2e-1644d7287c7a.png)
